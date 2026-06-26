@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0f1623; font-family:'Segoe UI',sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+.wrap { width:936px; height:535px; background:#0f1623; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px; }
+h2 { color:white; font-size:20px; font-weight:700; text-align:center; }
+h2 span { color:#ec4899; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.card { background:#1a2235; border-radius:12px; padding:16px; text-align:center; opacity:0; transform:translateY(20px); transition:all 0.5s ease; }
+.card.show { opacity:1; transform:translateY(0); }
+.card:nth-child(1){transition-delay:0.1s;border-top:2px solid #ec4899;}
+.card:nth-child(2){transition-delay:0.2s;border-top:2px solid #3b82f6;}
+.card:nth-child(3){transition-delay:0.3s;border-top:2px solid #f59e0b;}
+.card:nth-child(4){transition-delay:0.4s;border-top:2px solid #22c55e;}
+.val { font-size:28px; font-weight:700; color:white; }
+.lbl { font-size:11px; color:#8892aa; margin-top:4px; }
+.chg { font-size:11px; color:#22c55e; margin-top:4px; }
+.platforms { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.plt { background:#1a2235; border-radius:10px; padding:14px; text-align:center; opacity:0; transition:all 0.5s ease; }
+.plt.show { opacity:1; }
+.plt:nth-child(1){transition-delay:0.5s;}
+.plt:nth-child(2){transition-delay:0.6s;}
+.plt:nth-child(3){transition-delay:0.7s;}
+.plt:nth-child(4){transition-delay:0.8s;}
+.plt-icon { font-size:24px; margin-bottom:6px; }
+.plt-name { font-size:12px; color:white; font-weight:600; }
+.plt-stat { font-size:11px; color:#22c55e; margin-top:4px; }
+.content-box { background:#1a2235; border-radius:12px; padding:16px; display:flex; gap:16px; align-items:center; opacity:0; transition:all 0.5s 0.8s ease; }
+.content-box.show { opacity:1; }
+.content-box .cb-title { font-size:13px; font-weight:600; color:white; margin-bottom:10px; }
+.cb-row { display:flex; gap:8px; margin-bottom:6px; }
+.cb-tag { background:#ec489920; border:1px solid #ec489940; border-radius:20px; padding:4px 10px; font-size:10px; color:#f472b6; }
+.cb-tag.blue { background:#3b82f620; border-color:#3b82f640; color:#60a5fa; }
+.cb-tag.green { background:#22c55e20; border-color:#22c55e40; color:#4ade80; }
+</style></head>
+<body>
+<div class="wrap">
+  <h2>Social Media Marketing — <span>Build. Grow. Convert.</span></h2>
+  <div class="cards">
+    <div class="card"><div style="font-size:20px">👥</div><div class="val" data-target="2" data-suffix="M+">0</div><div class="lbl">Total Reach</div><div class="chg">↑ monthly</div></div>
+    <div class="card"><div style="font-size:20px">❤️</div><div class="val" data-target="8.4" data-suffix="%">0%</div><div class="lbl">Avg Engagement</div><div class="chg">↑ 3x industry avg</div></div>
+    <div class="card"><div style="font-size:20px">📈</div><div class="val" data-target="500" data-suffix="+">0+</div><div class="lbl">Posts Created</div><div class="chg">↑ per month</div></div>
+    <div class="card"><div style="font-size:20px">🛒</div><div class="val" data-target="32" data-suffix="%">0%</div><div class="lbl">Follower→Buyer</div><div class="chg">↑ conversion</div></div>
+  </div>
+  <div class="platforms">
+    <div class="plt"><div class="plt-icon">📸</div><div class="plt-name">Instagram</div><div class="plt-stat">Reels + Stories</div></div>
+    <div class="plt"><div class="plt-icon">👍</div><div class="plt-name">Facebook</div><div class="plt-stat">Ads + Groups</div></div>
+    <div class="plt"><div class="plt-icon">💼</div><div class="plt-name">LinkedIn</div><div class="plt-stat">B2B Leads</div></div>
+    <div class="plt"><div class="plt-icon">▶️</div><div class="plt-name">YouTube</div><div class="plt-stat">Shorts + Videos</div></div>
+  </div>
+  <div class="content-box">
+    <div style="flex:1">
+      <div class="cb-title">Content Strategy We Use</div>
+      <div class="cb-row">
+        <span class="cb-tag">🎬 Reels</span>
+        <span class="cb-tag">📊 Carousels</span>
+        <span class="cb-tag blue">✍️ Copywriting</span>
+      </div>
+      <div class="cb-row">
+        <span class="cb-tag green">📅 Content Calendar</span>
+        <span class="cb-tag">🤝 Influencer Collab</span>
+      </div>
+    </div>
+    <div style="text-align:center;background:#ec489915;border-radius:10px;padding:16px 24px;">
+      <div style="font-size:28px;font-weight:700;color:white" data-target="10" data-suffix="x">0x</div>
+      <div style="font-size:11px;color:#8892aa;margin-top:4px">Avg Follower Growth</div>
+      <div style="font-size:11px;color:#22c55e;margin-top:4px">in 90 days</div>
+    </div>
+  </div>
+</div>
+<script>
+const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) start(); }); }, {threshold:0.3});
+obs.observe(document.body);
+function start() {
+  document.querySelectorAll('.card,.plt,.content-box').forEach(el => el.classList.add('show'));
+  setTimeout(() => {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const t=parseFloat(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+      const isF=t%1!==0; let c=0;
+      const iv=setInterval(()=>{ c+=t/60; if(c>=t){c=t;clearInterval(iv);} el.textContent=pre+(isF?c.toFixed(1):Math.floor(c).toLocaleString())+suf; },25);
+    });
+  }, 200);
+}
+</script>
+</body></html>

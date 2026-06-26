@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0f1623; font-family:'Segoe UI',sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+.wrap { width:936px; height:535px; background:#0f1623; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:14px; }
+h2 { color:white; font-size:20px; font-weight:700; text-align:center; }
+h2 span { color:#f59e0b; }
+.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.card { background:#1a2235; border-radius:12px; padding:16px; opacity:0; transform:translateY(20px); transition:all 0.5s ease; }
+.card.show { opacity:1; transform:translateY(0); }
+.card:nth-child(1){transition-delay:0.1s;border-top:2px solid #3b82f6;}
+.card:nth-child(2){transition-delay:0.2s;border-top:2px solid #6366f1;}
+.card:nth-child(3){transition-delay:0.3s;border-top:2px solid #22c55e;}
+.card-title { font-size:12px; font-weight:600; color:#8892aa; margin-bottom:10px; text-align:center; }
+.card-val { font-size:32px; font-weight:700; text-align:center; }
+.card-sub { font-size:11px; color:#8892aa; text-align:center; margin-top:4px; }
+.card-chg { font-size:11px; color:#22c55e; text-align:center; margin-top:4px; }
+.mid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.box { background:#1a2235; border-radius:12px; padding:16px; opacity:0; transition:all 0.5s ease; }
+.box.show { opacity:1; }
+.box:nth-child(1){transition-delay:0.4s;}
+.box:nth-child(2){transition-delay:0.5s;}
+.box-title { font-size:13px; font-weight:600; color:white; margin-bottom:12px; display:flex; justify-content:space-between; }
+.box-title span { font-size:10px; color:#22c55e; font-weight:400; }
+.bar-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+.bar-label { font-size:11px; color:#8892aa; width:80px; }
+.bar-bg { flex:1; height:5px; background:#ffffff10; border-radius:3px; margin:0 8px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:3px; transform:scaleX(0); transform-origin:left; transition:transform 0.9s ease; }
+.bar-fill.show { transform:scaleX(1); }
+.bar-pct { font-size:11px; color:#22c55e; width:32px; text-align:right; }
+.step-row { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+.step-circle { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; }
+.step-text { font-size:11px; color:#8892aa; }
+.step-sub { font-size:10px; color:#8892aa; opacity:0.7; }
+.bottom { background:#1a2235; border-radius:12px; padding:14px; display:flex; justify-content:space-around; align-items:center; opacity:0; transition:all 0.5s 0.6s ease; }
+.bottom.show { opacity:1; }
+.b-item { text-align:center; }
+.b-val { font-size:20px; font-weight:700; color:white; }
+.b-lbl { font-size:10px; color:#8892aa; margin-top:3px; }
+</style></head>
+<body>
+<div class="wrap">
+  <h2>Google & Meta Ads — <span>Stop Burning Budget. Start Getting Real Leads.</span></h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Google Search Ads</div>
+      <div class="card-val" style="color:#3b82f6">₹<span data-target="180">0</span></div>
+      <div class="card-sub">Cost Per Lead</div>
+      <div class="card-chg">↓ was ₹650 before</div>
+      <div style="margin-top:8px;font-size:11px;color:#8892aa">Conversion Rate</div>
+      <div style="font-size:18px;font-weight:700;color:#3b82f6"><span data-target="8.4" data-suffix="%">0%</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Meta (Facebook/Instagram)</div>
+      <div class="card-val" style="color:#6366f1">₹<span data-target="120">0</span></div>
+      <div class="card-sub">Cost Per Lead</div>
+      <div class="card-chg">↓ was ₹480 before</div>
+      <div style="margin-top:8px;font-size:11px;color:#8892aa">ROAS</div>
+      <div style="font-size:18px;font-weight:700;color:#6366f1"><span data-target="4.8" data-suffix="x">0x</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Retargeting Campaigns</div>
+      <div class="card-val" style="color:#22c55e">₹<span data-target="65">0</span></div>
+      <div class="card-sub">Cost Per Lead</div>
+      <div class="card-chg">lowest cost, highest ROI</div>
+      <div style="margin-top:8px;font-size:11px;color:#8892aa">ROAS</div>
+      <div style="font-size:18px;font-weight:700;color:#22c55e"><span data-target="7.2" data-suffix="x">0x</span></div>
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="box">
+      <div class="box-title">Budget vs Results — Before & After <span>Same budget. 2.8x more revenue.</span></div>
+      <div class="bar-row">
+        <span class="bar-label" style="color:#ef4444">Before</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:28%;background:#ef4444"></div></div>
+        <span style="font-size:10px;color:#8892aa;width:140px">₹20K → ₹31K revenue</span>
+        <span class="bar-pct" style="color:#ef4444">1.5x</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label" style="color:#22c55e">After</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:90%;background:#22c55e;transition-delay:0.2s"></div></div>
+        <span style="font-size:10px;color:#8892aa;width:140px">₹20K → ₹84K revenue</span>
+        <span class="bar-pct" style="color:#22c55e">4.2x</span>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-title">Our 4-Step Ads Process</div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#3b82f620;color:#60a5fa;border:1px solid #3b82f660">01</div>
+        <div><div class="step-text" style="color:white;font-weight:600">Research</div><div class="step-sub">Keywords & audience targeting</div></div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#6366f120;color:#a78bfa;border:1px solid #6366f160">02</div>
+        <div><div class="step-text" style="color:white;font-weight:600">Launch</div><div class="step-sub">Campaigns go live</div></div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#f59e0b20;color:#fbbf24;border:1px solid #f59e0b60">03</div>
+        <div><div class="step-text" style="color:white;font-weight:600">Optimize</div><div class="step-sub">Daily improvements & A/B tests</div></div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#22c55e20;color:#4ade80;border:1px solid #22c55e60">04</div>
+        <div><div class="step-text" style="color:white;font-weight:600">Scale</div><div class="step-sub">More leads, less cost</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="b-item"><div class="b-val" data-target="4.2" data-suffix="x">0x</div><div class="b-lbl">Avg ROAS</div></div>
+    <div class="b-item"><div class="b-val" data-target="1840">0</div><div class="b-lbl">Leads/Month</div></div>
+    <div class="b-item"><div class="b-val" style="color:#22c55e">₹10K+</div><div class="b-lbl">Min Budget</div></div>
+    <div class="b-item"><div class="b-val" style="color:#22c55e">No Lock-in</div><div class="b-lbl">Contracts</div></div>
+    <div class="b-item"><div class="b-val" data-target="30" data-suffix="+">0+</div><div class="b-lbl">Countries</div></div>
+  </div>
+</div>
+<script>
+const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting) start(); }); }, {threshold:0.3});
+obs.observe(document.body);
+function start() {
+  document.querySelectorAll('.card,.box,.bottom').forEach(el => el.classList.add('show'));
+  setTimeout(() => document.querySelectorAll('.bar-fill').forEach(el => el.classList.add('show')), 600);
+  setTimeout(() => {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const t=parseFloat(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+      const isF=t%1!==0; let c=0;
+      const iv=setInterval(()=>{ c+=t/60; if(c>=t){c=t;clearInterval(iv);} el.textContent=pre+(isF?c.toFixed(1):Math.floor(c).toLocaleString())+suf; },25);
+    });
+  }, 200);
+}
+</script>
+</body></html>

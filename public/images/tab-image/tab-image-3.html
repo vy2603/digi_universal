@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0f1623; font-family:'Segoe UI',sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+.wrap { width:936px; height:535px; background:#0f1623; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:14px; }
+h2 { color:white; font-size:20px; font-weight:700; text-align:center; }
+h2 span { color:#22c55e; }
+.top { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center; }
+.before-after { background:#1a2235; border-radius:12px; padding:16px; opacity:0; transition:all 0.5s ease; }
+.before-after.show { opacity:1; }
+.before-after:nth-child(1){transition-delay:0.1s;border:1px solid #ef444440;}
+.before-after:nth-child(3){transition-delay:0.2s;border:1px solid #22c55e40;}
+.ba-title { font-size:12px; font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:6px; }
+.ba-label { font-size:11px; color:#8892aa; margin-bottom:4px; }
+.ba-val { font-size:28px; font-weight:700; }
+.ba-sub { font-size:11px; margin-top:4px; }
+.arrow-box { text-align:center; }
+.arrow-btn { background:#6366f120; border:1px solid #6366f160; border-radius:20px; padding:6px 14px; font-size:11px; color:#a78bfa; }
+.mid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.box { background:#1a2235; border-radius:12px; padding:16px; opacity:0; transition:all 0.5s ease; }
+.box.show { opacity:1; }
+.box:nth-child(1){transition-delay:0.4s;}
+.box:nth-child(2){transition-delay:0.5s;}
+.box-title { font-size:13px; font-weight:600; color:white; margin-bottom:10px; }
+.step-row { display:flex; align-items:flex-start; gap:10px; margin-bottom:8px; }
+.step-circle { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; }
+.step-info { flex:1; }
+.step-title { font-size:11px; color:white; font-weight:600; }
+.step-sub { font-size:10px; color:#8892aa; }
+.step-time { font-size:10px; border-radius:10px; padding:2px 8px; display:inline-block; margin-top:3px; }
+.bottom { background:#1a2235; border-radius:12px; padding:14px; display:flex; justify-content:space-around; align-items:center; opacity:0; transition:all 0.5s 0.6s ease; }
+.bottom.show { opacity:1; }
+.b-val { font-size:22px; font-weight:700; }
+.b-lbl { font-size:10px; color:#8892aa; margin-top:3px; text-align:center; }
+</style></head>
+<body>
+<div class="wrap">
+  <h2>Search Engine Optimization — <span>From Invisible to Page 1</span></h2>
+
+  <div class="top">
+    <div class="before-after">
+      <div class="ba-title" style="color:#ef4444">❌ Before DigiUniversal</div>
+      <div class="ba-label">Google Ranking</div>
+      <div class="ba-val" style="color:#ef4444">Page 3-4</div>
+      <div class="ba-sub" style="color:#8892aa">Almost no one finds you</div>
+      <div style="margin-top:10px">
+        <div class="ba-label">Monthly Organic Traffic</div>
+        <div style="font-size:22px;font-weight:700;color:#ef4444">80-150</div>
+        <div class="ba-sub" style="color:#8892aa">visitors/month</div>
+      </div>
+    </div>
+
+    <div class="arrow-box">
+      <div style="font-size:28px">→</div>
+      <div class="arrow-btn" style="margin-top:6px">4-6 months</div>
+    </div>
+
+    <div class="before-after">
+      <div class="ba-title" style="color:#22c55e">✅ After DigiUniversal</div>
+      <div class="ba-label">Google Ranking</div>
+      <div class="ba-val" style="color:#22c55e">Page 1</div>
+      <div class="ba-sub" style="color:#22c55e">Customers find you first</div>
+      <div style="margin-top:10px">
+        <div class="ba-label">Monthly Organic Traffic</div>
+        <div style="font-size:22px;font-weight:700;color:#22c55e">800-2K</div>
+        <div class="ba-sub" style="color:#22c55e">visitors/month ↑ 10x+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="box">
+      <div class="box-title">Our 4-Step SEO Process</div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#3b82f620;color:#60a5fa;border:1px solid #3b82f660">1</div>
+        <div class="step-info">
+          <div class="step-title">Deep Audit</div>
+          <div class="step-sub">Website, keywords & competitors</div>
+          <span class="step-time" style="background:#3b82f615;color:#60a5fa">Week 1</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#22c55e20;color:#4ade80;border:1px solid #22c55e60">2</div>
+        <div class="step-info">
+          <div class="step-title">Custom Strategy</div>
+          <div class="step-sub">Roadmap with clear goals & timeline</div>
+          <span class="step-time" style="background:#22c55e15;color:#4ade80">Week 2</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#f59e0b20;color:#fbbf24;border:1px solid #f59e0b60">3</div>
+        <div class="step-info">
+          <div class="step-title">Full Execution</div>
+          <div class="step-sub">On-page, off-page & technical SEO</div>
+          <span class="step-time" style="background:#f59e0b15;color:#fbbf24">Month 1-3</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#ec489920;color:#f472b6;border:1px solid #ec489960">4</div>
+        <div class="step-info">
+          <div class="step-title">Rank & Scale</div>
+          <div class="step-sub">Page 1 rankings & steady growth</div>
+          <span class="step-time" style="background:#ec489915;color:#f472b6">Month 3-6</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-title">Results We Deliver</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;background:#22c55e15;border-radius:8px;padding:8px 12px;">
+          <span style="font-size:12px;color:white">Traffic Growth</span>
+          <span style="font-size:16px;font-weight:700;color:#22c55e" data-target="10" data-suffix="x">0x</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;background:#3b82f615;border-radius:8px;padding:8px 12px;">
+          <span style="font-size:12px;color:white">Google Ranking</span>
+          <span style="font-size:14px;font-weight:700;color:#60a5fa">Page 1</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;background:#f59e0b15;border-radius:8px;padding:8px 12px;">
+          <span style="font-size:12px;color:white">Revenue Growth</span>
+          <span style="font-size:16px;font-weight:700;color:#fbbf24" data-target="3" data-suffix="x">0x</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;background:#6366f115;border-radius:8px;padding:8px 12px;">
+          <span style="font-size:12px;color:white">Works for small businesses too</span>
+          <span style="font-size:12px;font-weight:600;color:#a78bfa">Any budget ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div><div class="b-val" style="color:#22c55e" data-target="312" data-suffix="%">0%</div><div class="b-lbl">Organic Traffic Increase</div></div>
+    <div><div class="b-val" style="color:#3b82f6">Page 1</div><div class="b-lbl">Google Ranking</div></div>
+    <div><div class="b-val" style="color:#f59e0b" data-target="2" data-suffix="-3x">0x</div><div class="b-lbl">Revenue Growth</div></div>
+    <div><div class="b-val" style="color:#ec4899">Zero</div><div class="b-lbl">Ad Spend Needed</div></div>
+  </div>
+</div>
+<script>
+const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting) start(); }); }, {threshold:0.3});
+obs.observe(document.body);
+function start() {
+  document.querySelectorAll('.before-after,.box,.bottom').forEach(el => el.classList.add('show'));
+  setTimeout(() => {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const t=parseFloat(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+      const isF=t%1!==0; let c=0;
+      const iv=setInterval(()=>{ c+=t/60; if(c>=t){c=t;clearInterval(iv);} el.textContent=pre+(isF?c.toFixed(1):Math.floor(c).toLocaleString())+suf; },25);
+    });
+  }, 200);
+}
+</script>
+</body></html>

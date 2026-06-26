@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0f1623; font-family:'Segoe UI',sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+.wrap { width:936px; height:535px; background:#0f1623; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px; }
+h2 { color:white; font-size:20px; font-weight:700; text-align:center; }
+h2 span { color:#3b82f6; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.card { background:#1a2235; border-radius:12px; padding:16px; text-align:center; opacity:0; transform:translateY(20px); transition:all 0.5s ease; }
+.card.show { opacity:1; transform:translateY(0); }
+.card:nth-child(1){transition-delay:0.1s;border-top:2px solid #3b82f6;}
+.card:nth-child(2){transition-delay:0.2s;border-top:2px solid #22c55e;}
+.card:nth-child(3){transition-delay:0.3s;border-top:2px solid #f59e0b;}
+.card:nth-child(4){transition-delay:0.4s;border-top:2px solid #ec4899;}
+.val { font-size:28px; font-weight:700; color:white; }
+.lbl { font-size:11px; color:#8892aa; margin-top:4px; }
+.chg { font-size:11px; color:#22c55e; margin-top:4px; }
+.mid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.box { background:#1a2235; border-radius:12px; padding:16px; opacity:0; transition:all 0.5s ease; }
+.box.show { opacity:1; }
+.box:nth-child(1){transition-delay:0.5s;}
+.box:nth-child(2){transition-delay:0.6s;}
+.box-title { font-size:13px; font-weight:600; color:white; margin-bottom:10px; }
+.feat-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.feat-dot { width:8px; height:8px; border-radius:50%; background:#3b82f6; flex-shrink:0; }
+.feat-text { font-size:11px; color:#8892aa; }
+.score-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.score-label { font-size:11px; color:#8892aa; }
+.score-val { font-size:13px; font-weight:700; color:#22c55e; }
+.score-bar-bg { flex:1; height:4px; background:#ffffff10; border-radius:2px; margin:0 8px; overflow:hidden; }
+.score-bar { height:100%; border-radius:2px; transform:scaleX(0); transform-origin:left; transition:transform 1s ease; }
+.score-bar.show { transform:scaleX(1); }
+</style></head>
+<body>
+<div class="wrap">
+  <h2>Web Design & Development — <span>Sites That Sell 24/7</span></h2>
+  <div class="cards">
+    <div class="card"><div style="font-size:20px">⚡</div><div class="val" data-target="0.8" data-suffix="s">0s</div><div class="lbl">Load Speed</div><div class="chg">↑ lightning fast</div></div>
+    <div class="card"><div style="font-size:20px">📱</div><div class="val" data-target="100" data-suffix="%">0%</div><div class="lbl">Mobile Ready</div><div class="chg">↑ all devices</div></div>
+    <div class="card"><div style="font-size:20px">💰</div><div class="val" data-target="3.4" data-suffix="x">0x</div><div class="lbl">More Conversions</div><div class="chg">↑ vs old site</div></div>
+    <div class="card"><div style="font-size:20px">🔒</div><div class="val" data-target="99.9" data-suffix="%">0%</div><div class="lbl">Uptime</div><div class="chg">↑ always live</div></div>
+  </div>
+  <div class="mid">
+    <div class="box">
+      <div class="box-title">What We Build</div>
+      <div class="feat-row"><div class="feat-dot" style="background:#3b82f6"></div><div class="feat-text">Business Websites & Landing Pages</div></div>
+      <div class="feat-row"><div class="feat-dot" style="background:#22c55e"></div><div class="feat-text">E-Commerce Stores (Shopify/WooCommerce)</div></div>
+      <div class="feat-row"><div class="feat-dot" style="background:#f59e0b"></div><div class="feat-text">Custom Web Apps & Portals</div></div>
+      <div class="feat-row"><div class="feat-dot" style="background:#ec4899"></div><div class="feat-text">UI/UX Design & Figma Prototypes</div></div>
+      <div class="feat-row"><div class="feat-dot" style="background:#6366f1"></div><div class="feat-text">Speed & Core Web Vitals Optimization</div></div>
+      <div class="feat-row"><div class="feat-dot" style="background:#14b8a6"></div><div class="feat-text">Website Maintenance & Support</div></div>
+    </div>
+    <div class="box">
+      <div class="box-title">Google PageSpeed Scores</div>
+      <div class="score-row"><span class="score-label">Performance</span><div class="score-bar-bg"><div class="score-bar" style="width:98%;background:#22c55e"></div></div><span class="score-val">98</span></div>
+      <div class="score-row"><span class="score-label">Accessibility</span><div class="score-bar-bg"><div class="score-bar" style="width:96%;background:#3b82f6;transition-delay:0.2s"></div></div><span class="score-val">96</span></div>
+      <div class="score-row"><span class="score-label">Best Practices</span><div class="score-bar-bg"><div class="score-bar" style="width:100%;background:#f59e0b;transition-delay:0.4s"></div></div><span class="score-val">100</span></div>
+      <div class="score-row"><span class="score-label">SEO Score</span><div class="score-bar-bg"><div class="score-bar" style="width:100%;background:#ec4899;transition-delay:0.6s"></div></div><span class="score-val">100</span></div>
+      <div style="margin-top:12px;background:#3b82f615;border-radius:8px;padding:10px;text-align:center;">
+        <div style="font-size:13px;color:white;font-weight:600">Delivered in 2–4 Weeks</div>
+        <div style="font-size:11px;color:#8892aa;margin-top:2px">Fast turnaround. No delays.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) start(); }); }, {threshold:0.3});
+obs.observe(document.body);
+function start() {
+  document.querySelectorAll('.card,.box').forEach(el => el.classList.add('show'));
+  setTimeout(() => document.querySelectorAll('.score-bar').forEach(el => el.classList.add('show')), 700);
+  setTimeout(() => {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const t=parseFloat(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+      const isF=t%1!==0; let c=0;
+      const iv=setInterval(()=>{ c+=t/60; if(c>=t){c=t;clearInterval(iv);} el.textContent=pre+(isF?c.toFixed(1):Math.floor(c).toLocaleString())+suf; },25);
+    });
+  }, 200);
+}
+</script>
+</body></html>

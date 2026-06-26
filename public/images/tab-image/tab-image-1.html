@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0f1623; font-family:'Segoe UI',sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+.wrap { width:936px; height:535px; background:#0f1623; border-radius:16px; overflow:hidden; padding:28px; display:flex; flex-direction:column; gap:16px; }
+h2 { color:white; font-size:20px; font-weight:700; text-align:center; }
+h2 span { color:#6366f1; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.card { background:#1a2235; border-radius:12px; padding:16px; text-align:center; opacity:0; transform:translateY(20px); transition:all 0.5s ease; }
+.card.show { opacity:1; transform:translateY(0); }
+.card:nth-child(1){transition-delay:0.1s;border-top:2px solid #3b82f6;}
+.card:nth-child(2){transition-delay:0.2s;border-top:2px solid #22c55e;}
+.card:nth-child(3){transition-delay:0.3s;border-top:2px solid #f59e0b;}
+.card:nth-child(4){transition-delay:0.4s;border-top:2px solid #ec4899;}
+.card .icon { font-size:24px; margin-bottom:8px; }
+.card .val { font-size:28px; font-weight:700; color:white; }
+.card .lbl { font-size:11px; color:#8892aa; margin-top:4px; }
+.card .chg { font-size:11px; color:#22c55e; margin-top:4px; }
+.channels { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.ch { background:#1a2235; border-radius:10px; padding:12px; opacity:0; transition:all 0.5s ease; }
+.ch.show { opacity:1; }
+.ch:nth-child(1){transition-delay:0.5s;}
+.ch:nth-child(2){transition-delay:0.6s;}
+.ch:nth-child(3){transition-delay:0.7s;}
+.ch:nth-child(4){transition-delay:0.8s;}
+.ch-title { font-size:11px; color:#8892aa; margin-bottom:6px; }
+.ch-val { font-size:16px; font-weight:700; color:white; }
+.ch-sub { font-size:10px; color:#22c55e; }
+.progress-row { display:flex; align-items:center; gap:10px; }
+.progress-label { font-size:11px; color:#8892aa; width:120px; }
+.progress-bg { flex:1; height:6px; background:#ffffff10; border-radius:3px; overflow:hidden; }
+.progress-fill { height:100%; border-radius:3px; transform:scaleX(0); transform-origin:left; transition:transform 1s ease; }
+.progress-fill.show { transform:scaleX(1); }
+.progress-pct { font-size:11px; color:#22c55e; width:35px; text-align:right; }
+.prog-section { background:#1a2235; border-radius:12px; padding:16px; }
+.prog-title { font-size:13px; font-weight:600; color:white; margin-bottom:12px; }
+</style></head>
+<body>
+<div class="wrap">
+  <h2>Performance Marketing — <span>Real Results, Zero Guesswork</span></h2>
+  <div class="cards">
+    <div class="card"><div class="icon">🎯</div><div class="val" data-target="4.2" data-suffix="x">0x</div><div class="lbl">Avg ROAS</div><div class="chg">↑ industry best</div></div>
+    <div class="card"><div class="icon">💰</div><div class="val" data-target="1840">0</div><div class="lbl">Leads/Month</div><div class="chg">↑ 24% growth</div></div>
+    <div class="card"><div class="icon">📉</div><div class="val" data-target="65" data-prefix="₹">₹0</div><div class="lbl">Cost Per Lead</div><div class="chg">↓ lowest ever</div></div>
+    <div class="card"><div class="icon">🌍</div><div class="val" data-target="30" data-suffix="+">0+</div><div class="lbl">Countries Active</div><div class="chg">↑ worldwide</div></div>
+  </div>
+  <div class="channels">
+    <div class="ch"><div class="ch-title">Google Ads</div><div class="ch-val">4.8x ROAS</div><div class="ch-sub">↑ 8.4% CVR</div></div>
+    <div class="ch"><div class="ch-title">Meta Ads</div><div class="ch-val">₹120 CPL</div><div class="ch-sub">↓ from ₹480</div></div>
+    <div class="ch"><div class="ch-title">YouTube Ads</div><div class="ch-val">3.2x ROAS</div><div class="ch-sub">↑ brand reach</div></div>
+    <div class="ch"><div class="ch-title">LinkedIn Ads</div><div class="ch-val">B2B Focus</div><div class="ch-sub">↑ quality leads</div></div>
+  </div>
+  <div class="prog-section">
+    <div class="prog-title">Channel Performance</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div class="progress-row"><span class="progress-label">Google Search</span><div class="progress-bg"><div class="progress-fill" style="width:96%;background:#3b82f6"></div></div><span class="progress-pct">96%</span></div>
+      <div class="progress-row"><span class="progress-label">Facebook/Instagram</span><div class="progress-bg"><div class="progress-fill" style="width:88%;background:#6366f1"></div></div><span class="progress-pct">88%</span></div>
+      <div class="progress-row"><span class="progress-label">YouTube</span><div class="progress-bg"><div class="progress-fill" style="width:74%;background:#f59e0b"></div></div><span class="progress-pct">74%</span></div>
+      <div class="progress-row"><span class="progress-label">LinkedIn</span><div class="progress-bg"><div class="progress-fill" style="width:62%;background:#22c55e"></div></div><span class="progress-pct">62%</span></div>
+    </div>
+  </div>
+</div>
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) start(); });
+}, {threshold:0.3});
+obs.observe(document.body);
+function start() {
+  document.querySelectorAll('.card,.ch').forEach(el => el.classList.add('show'));
+  setTimeout(() => document.querySelectorAll('.progress-fill').forEach(el => el.classList.add('show')), 600);
+  setTimeout(() => {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const t = parseFloat(el.dataset.target), pre = el.dataset.prefix||'', suf = el.dataset.suffix||'';
+      const isF = t%1!==0; let c=0;
+      const iv = setInterval(() => {
+        c += t/60; if(c>=t){c=t;clearInterval(iv);}
+        el.textContent = pre+(isF?c.toFixed(1):Math.floor(c).toLocaleString())+suf;
+      }, 25);
+    });
+  }, 200);
+}
+</script>
+</body></html>
